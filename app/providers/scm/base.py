@@ -1,20 +1,18 @@
-"""GitHub SCM provider placeholder."""
+"""SCM provider interface."""
 
 from __future__ import annotations
 
+from typing import Protocol
+
 from app.models.scm import PullRequestInfo
-from app.providers.scm.base import ScmProvider
 
 
-class GitHubProvider(ScmProvider):
-    def __init__(self) -> None:
-        raise NotImplementedError("Implement GitHub API integration")
-
+class ScmProvider(Protocol):
     def validate_auth(self) -> None:
-        raise NotImplementedError
+        ...
 
     def get_repo_default_branch(self, repo: str) -> str:
-        raise NotImplementedError
+        ...
 
     def open_pr(
         self,
@@ -26,16 +24,16 @@ class GitHubProvider(ScmProvider):
         draft: bool = False,
         labels: list[str] | None = None,
     ) -> PullRequestInfo:
-        raise NotImplementedError
+        ...
 
     def update_pr(self, pr_number: int, title: str | None = None, body: str | None = None) -> None:
-        raise NotImplementedError
+        ...
 
     def comment_pr(self, pr_number: int, body: str) -> None:
-        raise NotImplementedError
+        ...
 
     def get_pr_checks(self, pr_number: int) -> str:
-        raise NotImplementedError
+        ...
 
     def set_commit_status(
         self,
@@ -44,4 +42,4 @@ class GitHubProvider(ScmProvider):
         description: str,
         target_url: str | None = None,
     ) -> None:
-        raise NotImplementedError
+        ...

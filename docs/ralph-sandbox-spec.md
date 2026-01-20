@@ -148,6 +148,9 @@ Required methods:
 - git_push(sandbox_id, path, remote, branch, auth) -> result
 - get_preview_link(sandbox_id, port) -> url (optional; Daytona supports)
 
+Implementation note:
+- In this repo, the interface lives in `app/providers/sandbox/base.py` and shared types are in `app/models/sandbox.py`.
+
 ### 6.2 Implementations
 - DaytonaProvider: uses Daytona SDK (FS/Git/Process/Preview)
 - LocalProvider: uses subprocess + temp dirs for unit/integration tests
@@ -164,6 +167,9 @@ Required methods:
 - comment_pr(pr_number, body) -> ok (optional)
 - get_pr_checks(pr_number) -> status (optional)
 - set_commit_status(sha, state, description, target_url=None) -> ok (optional)
+
+Implementation note:
+- In this repo, the interface lives in `app/providers/scm/base.py` and shared types are in `app/models/scm.py`.
 
 ### 7.2 GitHub auth modes (public + private)
 
