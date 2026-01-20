@@ -153,7 +153,7 @@ Implementation note:
 
 ### 6.2 Implementations
 - DaytonaProvider: uses Daytona SDK (FS/Git/Process/Preview)
-- LocalProvider: uses subprocess + temp dirs for unit/integration tests
+- LocalProvider: uses subprocess + local temp dirs for unit/integration tests, with git via CLI
 
 ---
 
