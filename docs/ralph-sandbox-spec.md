@@ -153,7 +153,7 @@ Implementation note:
 
 ### 6.2 Implementations
 - DaytonaProvider: uses Daytona SDK (FS/Git/Process/Preview)
-- LocalProvider: uses subprocess + temp dirs for unit/integration tests
+- LocalProvider: uses subprocess + temp dirs for unit/integration tests; stores each sandbox under a local temp root and constrains file access to the sandbox directory
 
 ---
 
