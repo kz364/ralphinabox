@@ -1,9 +1,9 @@
 # Status
 
 ## Done
-- Added shared data models and provider interfaces to align sandbox/SCM stubs with the spec.
-- Documented interface locations in the ralph-sandbox spec.
+- Implemented local sandbox provider behavior plus GitHub and LiteLLM client wrappers.
+- Updated the ralph-sandbox spec to reflect provider implementation details.
 
 ## Next
-- Implement Daytona/local sandbox behavior and GitHub/LiteLLM integrations.
-- Flesh out runner orchestration and dashboard workflows.
+- Add Daytona sandbox integration and wire providers into runner orchestration.
+- Extend dashboard workflows, including PR/check status views.

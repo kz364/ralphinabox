@@ -71,6 +71,7 @@ MVP must:
 
 - LiteLLM wrapper
 - Config-driven model profiles (default zai/glm-4.7)
+- Implementation note: the LiteLLM client loads `config/models.yaml` via PyYAML and requires `litellm` installed at runtime.
 
 ### 3.2 Ralph invariants (enforced)
 - Each iteration is a fresh model call (no multi-hour context).
@@ -153,7 +154,7 @@ Implementation note:
 
 ### 6.2 Implementations
 - DaytonaProvider: uses Daytona SDK (FS/Git/Process/Preview)
-- LocalProvider: uses subprocess + temp dirs for unit/integration tests
+- LocalProvider: uses subprocess + temp dirs for unit/integration tests (no resource enforcement; sandboxes are local directories)
 
 ---
 
@@ -182,6 +183,9 @@ Secrets rules:
 - Never log tokens (redact)
 - Pass tokens to sandboxes via env vars for commands that need them
 - Store tokens securely (MVP: local env + minimal storage; production: secrets manager)
+
+Implementation note:
+- The GitHub provider reads `GITHUB_PAT` or `GITHUB_TOKEN` for auth and expects a default repo when calling PR update/comment/check helpers.
 
 ---
 
