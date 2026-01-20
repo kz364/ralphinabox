@@ -1,0 +1,19 @@
+profiles:
+  default-cheap:
+    litellm_model: "zai/glm-4.7"
+    max_output_tokens: 2048
+    temperature: 0.2
+    tags: ["default", "cheap"]
+
+  strong-doctor:
+    # choose a stronger model you trust for diagnosis (can be swapped)
+    litellm_model: "openai/gpt-5"   # example; replace with your actual preference
+    max_output_tokens: 2048
+    temperature: 0.1
+    tags: ["doctor", "strong"]
+
+  codex-like:
+    litellm_model: "openai/gpt-codex"  # example; replace as needed
+    max_output_tokens: 2048
+    temperature: 0.2
+    tags: ["implementation"]
