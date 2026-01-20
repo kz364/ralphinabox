@@ -1,9 +1,7 @@
 # Status
 
 ## Done
-- Added shared data models and provider interfaces to align sandbox/SCM stubs with the spec.
-- Documented interface locations in the ralph-sandbox spec.
+- Added repository guidance to run tests whenever possible.
 
 ## Next
-- Implement Daytona/local sandbox behavior and GitHub/LiteLLM integrations.
-- Flesh out runner orchestration and dashboard workflows.
+- Run relevant test commands when additional changes are made.
